@@ -7,7 +7,7 @@
 
 ```
 admin-dashboard-service/   # Service repo (In-Charge: E3 – Admin Dashboard)
-├── production             # Stable branch (In-Charge merges here)
+├── main             # Stable branch (In-Charge merges here)
 ├── dev                    # Integration branch (all squads merge here)
 ├── feature-e3-1-user-mgmt         # Squad E3.1 – User Management
 ├── feature-e3-2-marketplace       # Squad E3.2 – Marketplace Oversight
@@ -34,6 +34,19 @@ setting--->collaborators--->give user profile name--->add --send email-->accept 
 
 
 
+
+git branch ----- * feature-e3-1-user-mgmt------->git fetch origin---------->git pull origin feature-e3-1-user-mgmt
+python -m venv venv --->venv\Scripts\activate--->pip install -r requirements.txt  
+ 
+pip install requests
+pip freeze > requirements.txt   # update file
+git add requirements.txt
+git commit -m "Add requests package"
+git push
+
+
+
+
 feature-e3-1-user-mgmt
         |
         |  (Squad works, commits, tests)
@@ -46,6 +59,11 @@ feature-e3-1-user-mgmt
 
 
 
+uvicorn src.main:app --reload   -->run the project
+
+
+
+uvicorn src.main:app --reload --port 8001
 
 ### 🛠 Steps to Create These Branches in GitHub
 
@@ -108,9 +126,11 @@ feature-e3-1-user-mgmt
    git checkout main
    git pull origin main 
    git branch
-   git checkout -b feature-e3-1-user-mgmt
+   git checkout -b feature-e3-1-user-mgmt       
+                  fatal: a branch named 'feature-e3-1-user-mgmt' already exists
+                  git checkout feature-e3-1-user-mgmt
    git add .
-   git commit -m "first commit"
+   git commit -m "in charge 2nd  commit"
    git push origin feature-e3-1-user-mgmt
 
 
@@ -365,3 +385,7 @@ Do you want me to also give you the **exact branch protection rule settings JSON
 
 
 # ____________________________________________________________________________________
+
+
+
+uvicorn src.main:app --reload
