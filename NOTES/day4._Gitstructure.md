@@ -37,13 +37,14 @@ setting--->collaborators--->give user profile name--->add --send email-->accept 
 
 git branch ----- * feature-e3-1-user-mgmt------->git fetch origin---------->git pull origin feature-e3-1-user-mgmt
 python -m venv venv --->venv\Scripts\activate--->pip install -r requirements.txt  
- 
+
 pip install requests
 pip freeze > requirements.txt   # update file
 git add requirements.txt
 git commit -m "Add requests package"
 git push
 
+git remote -v  -->checck git repository
 
 
 
@@ -60,10 +61,25 @@ feature-e3-1-user-mgmt
 
 
 uvicorn src.main:app --reload   -->run the project
-
-
-
 uvicorn src.main:app --reload --port 8001
+python scripts/seed_db.py
+
+
+status → select pending
+
+date_from → enter 2025-09-21T00:00:00
+
+date_to → enter 2025-09-21T23:59:59
+
+X-Admin (header) → enter true
+
+
+
+
+
+
+
+
 
 ### 🛠 Steps to Create These Branches in GitHub
 
@@ -389,3 +405,72 @@ Do you want me to also give you the **exact branch protection rule settings JSON
 
 
 uvicorn src.main:app --reload
+
+
+
+Super 👍 naan unga project ku **safe daily Git workflow** 5 steps la kudukuren. Idha follow panna team work smooth-aagum, conflicts kammiya irukkum, work lose aagathu.
+
+---
+
+## ✅ Daily Git Workflow (Team / GitHub project)
+
+### 1. Start your day → Pull latest code
+
+```powershell
+git checkout <your-branch-name>
+git pull origin <your-branch-name>
+```
+
+➡️ Always start with fresh code from GitHub, so you won’t work on outdated files.
+
+---
+
+### 2. Do your coding / changes locally
+
+* Edit files, add features, fix bugs.
+* Use `git status` often to check modified files.
+
+---
+
+### 3. Stage & Commit small changes
+
+```powershell
+git add .
+git commit -m "WIP: updated database connection"
+```
+
+➡️ Commit in **small chunks**, so history is clean and you can rollback easily if mistake happens.
+
+---
+
+### 4. Before pushing → Pull again
+
+```powershell
+git pull origin <your-branch-name>
+```
+
+* If no conflict → continue.
+* If conflict → resolve, then commit.
+
+---
+
+### 5. Finally push your changes
+
+```powershell
+git push origin <your-branch-name>
+```
+
+➡️ Now your work is on GitHub, teammates can use it.
+
+---
+
+## 🔹 Golden Rules
+
+* **Commit before pull** → un changes safe, conflicts easier to resolve.
+* **Pull before push** → so that you don’t overwrite teammates’ work.
+* **Commit often** → better checkpoints.
+* **Push only tested code** → so main repo clean-aa irukkum.
+
+---
+
+👉 Bro, unga project la team members evlo per work panraanga? Naan unga team size base panni **branching strategy (main, dev, feature branches)** recommend pannalaam. Would you like that?

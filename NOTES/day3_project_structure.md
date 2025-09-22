@@ -95,16 +95,6 @@ superapp-core/
 
 
 
-
-
-
-
-
-
-
-
-
-
 admin-dashboard-service/
 │── README.md
 │── requirements.txt / pyproject.toml

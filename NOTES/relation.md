@@ -1,0 +1,12 @@
+| **API Endpoint**         | **Primary Tables Updated / Queried**                                                           | **Event Published**                                          | **Analytics Metrics (Examples)**                                                                          |
+| ------------------------ | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------- |
+| **`/admin/users`**       | `users` (User Service DB)<br>`admin_flags` (Admin DB)<br>`audit_logs` (Admin DB)               | `admin.action.logged` (ban/unban/reset)                      | - Users banned/unbanned per day<br>- Active vs banned users<br>- Admin activity counts                    |
+| **`/admin/marketplace`** | `marketplace_listings` (Marketplace DB)<br>`admin_flags` (Admin DB)<br>`audit_logs` (Admin DB) | `admin.action.logged` (approve/reject/remove)                | - Listings flagged vs resolved<br>- Fraudulent content trends<br>- Marketplace health stats               |
+| **`/admin/services`**    | `bookings` (Services DB)<br>`admin_flags` (Admin DB)<br>`audit_logs` (Admin DB)                | `admin.action.logged` (approve/decline booking)              | - Flagged bookings per week<br>- Approval/rejection ratios<br>- Service provider trust metrics            |
+| **`/admin/payments`**    | `disputes` (Payment DB)<br>`audit_logs` (Admin DB)                                             | `admin.action.logged` (resolve\_dispute, refund, chargeback) | - Disputes opened vs resolved<br>- Average resolution time<br>- Refund/chargeback trends                  |
+| **`/admin/analytics`**   | `audit_logs` (Admin DB)<br>`analytics views` (Analytics Engine)                                | (Consumes events from all APIs)                              | - System-wide activity charts<br>- Admin performance metrics<br>- Compliance & fraud detection dashboards |
+
+
+https://chatgpt.com/share/68ce5ce7-bcbc-800e-9547-47f7df0e0de2
+
+https://chatgpt.com/share/68ce5ce7-bcbc-800e-9547-47f7df0e0de2
