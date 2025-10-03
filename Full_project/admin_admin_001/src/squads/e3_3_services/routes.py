@@ -35,7 +35,7 @@ def suspend_provider(
     provider, err = svc.suspend_provider(db, provider_id, admin_id, reason)
     if err == "not_found":
         raise not_found("Provider not found")
-    return {"provider_id": provider.id, "status": provider.status.value, "updated_at": provider.updated_at}
+    return {"provider_id": provider.provider_id, "status": provider.status}
 
 @router.post("/providers/{provider_id}/restore", status_code=status.HTTP_200_OK)
 def restore_provider(
@@ -49,4 +49,4 @@ def restore_provider(
     provider, err = svc.restore_provider(db, provider_id, admin_id, reason)
     if err == "not_found":
         raise not_found("Provider not found")
-    return {"provider_id": provider.id, "status": provider.status.value, "updated_at": provider.updated_at}
+    return {"provider_id": provider.provider_id, "status": provider.status}

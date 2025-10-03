@@ -6,3 +6,5 @@ from .audit_logs import AuditLog
 from .marketplace import Marketplace
 from .providers import Provider
 from .users import UserRole
+from .bookings import Booking
+from .flagged_bookings import FlaggedBooking
